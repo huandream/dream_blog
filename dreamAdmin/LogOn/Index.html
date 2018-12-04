@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/dream_blog/bs/css/bootstrap.css">
+    <link rel="stylesheet" href="/dream_blog/css/common.css">
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal">
+        <h2 class="form-signin-heading">用户登录</h2>
+        <div class="form-group">
+            <label for="Login-name"  class="sr-only">用户名：</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="Login-name" placeholder="用户名" maxlength="18" value="" describedby="name-error">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="name-error" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Login-pwd" class="sr-only">密码：</label>
+            <div class="col-sm-12">
+                <input type="password" class="form-control" id="Login-pwd" placeholder="密码" maxlength="50" describedby="pwd-error">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="pwd-error" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <a class="text-info" href="RegUser.html">注册</a>
+                <span>/</span>
+                <a class="text-danger" href="ForgetPwd.html">忘记密码</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <a href="javascript:void(0);" onclick="login()" class="btn btn-primary btn-block">登录</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script src="/dream_blog/js/jquery.js"></script>
+<script src="/dream_blog/bs/js/bootstrap.min.js"></script>
+<script src="/dream_blog/dreamAdmin/js/Index.js"></script>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/dream_blog/bs/css/bootstrap.css">
+    <link rel="stylesheet" href="css/dreamAdmin.css">
+</head>
+<style>
+.pageContent .container{
+    width:100%;
+}
+    .navbar-formzdy{
+        margin:12px 0px;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .newAlert{
+        position: absolute;
+        display: none;
+    }
+</style>
+<body>
+<!--顶部导航栏部分-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs"
+                    aria-expanded="false">
+                <span class="sr-only">组合</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" title="logoTitle" href="index.html">管理后台</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">当前用户：<span class="badge">TestUser</span></a>
+                </li>
+                <li>
+                    <a href="/dream_blog/index.html">返回博客首页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- 中间主体内容部分 -->
+<div class="pageContainer">
+    <!-- 左侧导航栏 -->
+    <div class="pageSidebar">
+        <ul class="nav nav-stacked nav-pills">
+            <li role="presentation" class="active">
+                <a href="sortManagement.html">文章分类管理</a>
+            </li>
+            <li role="presentation">
+                <a href="articleEditor.html">发布文章</a>
+            </li>
+            <li role="presentation">
+                <a href="articleList.html">文章列表</a>
+            </li>
+            <li role="presentation">
+                <a href="reviews.html">评论管理</a>
+            </li>
+            <li role="presentation">
+                <a href="aboutme.html">关于我编辑</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 正文内容部分 -->
+    <div class="pageContent">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button class="navbar-formzdy btn btn-success" data-toggle="modal" data-target="#tianjiaAll">添加</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <table class="table table-hover">
+                        <thead class="bg-info">
+                        <tr>
+                            <th>#</th>
+                            <th>类型</th>
+                            <th class="text-right">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        <tr>
+                            <td>1</td>
+                            <td class="yleixing">日记</td>
+                            <td class="text-right">
+                                <button class="btn btn-info btnBj" data-toggle="modal" data-target="#exampleModal">编辑
+                                </button>
+                                <button class="btn btn-danger btnDel">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="yleixing">现在</td>
+                            <td class="text-right">
+                                <button class="btn btn-info btnBj" data-toggle="modal" data-target="#exampleModal">编辑
+                                </button>
+                                <button class="btn btn-danger btnDel">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="yleixing">未来</td>
+                            <td class="text-right">
+                                <button class="btn btn-info btnBj" data-toggle="modal" data-target="#exampleModal">编辑
+                                </button>
+                                <button class="btn btn-danger btnDel">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="yleixing">过去</td>
+                            <td class="text-right">
+                                <button class="btn btn-info btnBj" data-toggle="modal" data-target="#exampleModal">编辑
+                                </button>
+                                <button class="btn btn-danger btnDel">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="yleixing">爱情</td>
+                            <td class="text-right">
+                                <button class="btn btn-info btnBj" data-toggle="modal" data-target="#exampleModal">编辑
+                                </button>
+                                <button class="btn btn-danger btnDel">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="yleixing">笔记</td>
+                            <td class="text-right">
+                                <button class="btn btn-info btnBj" data-toggle="modal" data-target="#exampleModal">编辑
+                                </button>
+                                <button class="btn btn-danger btnDel">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="yleixing">心得</td>
+                            <td class="text-right">
+                                <button class="btn btn-info btnBj" data-toggle="modal" data-target="#exampleModal">编辑
+                                </button>
+                                <button class="btn btn-danger btnDel">删除</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <!--分页-->
+                <div class="text-center">
+                    <div class="bs-example" data-example-id="disabled-active-pagination">
+                        <nav aria-label="fenye">
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="tianjiaAll">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="tianjia">添加类型</h4>
+            </div>
+            <div class="modal-body">
+                <form action="" class="form">
+                    <div class="form-group">
+                        <label for="old" class="sr-only">添加类型</label>
+                        <input type="text" class="form-control" id="new" placeholder="请输入类型名称(长度为2-6)">
+                        <div class="alert alert-danger alertCont newAlert" role="alert"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-success" onclick="tianjia()">添加</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="gridSystemModalLabel">修改类型</h4>
+            </div>
+            <div class="modal-body">
+                <form action="" class="form">
+                    <div class="form-group">
+                        <label for="old" class="sr-only">修改类型</label>
+                        <input type="text" class="form-control" id="old">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 底部页脚部分 -->
+<div class="footer">
+    <p class="text-center">
+        2018 &copy; Dream_Blog.
+    </p>
+</div>
+</body>
+<script src="/dream_blog/js/jquery.js"></script>
+<script src="/dream_blog/bs/js/bootstrap.js"></script>
+<script>
+    $(function(){
+        var url = 'http://192.168.0.1:64957';
+        $.ajax({
+            url:url,
+            dateType:'JSON',
+            success:function(lx){
+                for(var i = 0;i<lx.length;i++){
+                    var tbody='<tr>';
+                    tbody +='<td>'+i+'</td>';
+                    tbody +='<td class="yleixing">'+lx[i].leixing+'</td>';
+                    tbody +='<td class="text-right">';
+                    tbody +='<button class="btn btn-info btnBj" data-toggle="modal" data-target="#exampleModal">编辑</button>';
+                    tbody +='<button class="btn btn-danger btnDel">删除</button>';
+                    tbody +='</td>';
+                    tbody +='</tr>';
+                    $('#tbody').append(tbody);
+                }
+            },
+            erroe:function () {
+
+            }
+        })
+        var trSize = $("tbody tr").length;
+        if(trSize >= 7) {
+            $(".bs-example").show();
+        }else{
+            $(".bs-example").hide();
+        }
+
+        $('.btnBj').click(function(){
+            var yVal = $(this).parent().siblings('.yleixing').text();
+            $('#old').attr('placeholder',yVal);
+        });
+
+        $('.btnDel').click(function(){
+            var yVal = $(this).parent().siblings('.yleixing').text();
+            var result = confirm('确定删除  '+yVal+'  这个类型?');
+            if(result){
+                $(this).parent().parent().remove();
+            }
+        });
+
+    });
+
+    function tianjia(){
+        var newLei = $('#new').val();
+        var reg=new RegExp("^([\u4E00-\uFA29]|[\uE7C7-\uE7F3])*$");
+        if(newLei == ""|| !reg.test(newLei)){
+            $('.newAlert').text('类型不能为空且必须为中文').css('display','block');
+            return false;
+        }
+
+        if(newLei.length < 2 || newLei.length > 6){
+            $('.newAlert').text('类型名称长度应在2-6之间').css('display','block');
+            return false;
+        }
+
+        $('.newAlert').text('').css('display','none');
+
+        var url = 'http://192.168.10.1';
+        $.ajax({
+            url:url,
+            type:'POST',
+            data:{
+                leixing:newLei
+            },
+            dateType:'JSON',
+            success:function(){
+                window.location.href=location.href;
+            },
+            erroe:function(){
+
+            }
+        })
+    }
+
+
+</script>
+</html>

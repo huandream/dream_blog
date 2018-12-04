@@ -1,0 +1,34 @@
+.container{
+    max-width: 1200px;
+}
+.leftR{
+    text-align: right;
+}
+.pageContent{
+    height: 100%;
+}
+.pageContent .container{
+    margin:24px 0px;
+}
+#leixing{
+    max-width:120px;
+}
+.marginBottom{
+    margin-bottom: 12px;
+    vertical-align: middle;
+}
+.alertCont{
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width:180px;
+    transform: translate(-50%,-50%);
+    z-index: 10001;
+    display: none;
+}
+@media (max-width: 768px) {
+    .leftR{
+        text-align: left;
+    }
+}

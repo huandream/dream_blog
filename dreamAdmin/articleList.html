@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/dream_blog/bs/css/bootstrap.css">
+    <link rel="stylesheet" href="css/dreamAdmin.css">
+</head>
+<style>
+    .pageContent .container {
+        width: 100%;
+    }
+
+    .jianjuAll {
+        margin: 20px 0px;
+    }
+
+    .jianju {
+        margin: 10px 0;
+    }
+
+    @media (max-width: 680px) {
+        .btnBj {
+            margin: 4px 0px;
+            padding: 0px 3px;
+            font-size: 12px;
+        }
+    }
+
+</style>
+<body>
+<!--顶部导航栏部分-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs"
+                    aria-expanded="false">
+                <span class="sr-only">组合</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" title="logoTitle" href="index.html">管理后台</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">当前用户：<span class="badge">TestUser</span></a>
+                </li>
+                <li>
+                    <a href="/dream_blog/index.html">返回博客首页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- 中间主体内容部分 -->
+<div class="pageContainer">
+    <!-- 左侧导航栏 -->
+    <div class="pageSidebar">
+        <ul class="nav nav-stacked nav-pills">
+            <li role="presentation">
+                <a href="sortManagement.html">文章分类管理</a>
+            </li>
+            <li role="presentation">
+                <a href="articleEditor.html">发布文章</a>
+            </li>
+            <li role="presentation" class="active">
+                <a href="articleList.html">文章列表</a>
+            </li>
+            <li role="presentation">
+                <a href="reviews.html">评论管理</a>
+            </li>
+            <li role="presentation">
+                <a href="aboutme.html">关于我编辑</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 正文内容部分 -->
+    <div class="pageContent">
+        <div class="container">
+            <div class="row jianjuAll">
+                <div class="col-xs-12 col-sm-4 col-md-4 jianju">
+                    <select name="" class="form-control" id="fenlei">
+                        <option value="0">选择分类</option>
+                        <option value="日记">日记</option>
+                        <option value="心得">心得</option>
+                    </select>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 jianju">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入文章标题">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">查找</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <table class="table table-hover responsive">
+                        <thead class="bg-success">
+                        <tr>
+                            <th>#</th>
+                            <th>文章标题</th>
+                            <th>类型</th>
+                            <th>时间</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>将心比心</td>
+                            <td>日记</td>
+                            <td>2018-11-26</td>
+                            <td class="text-center">
+                                <button class="btn btn-info btnBj input-sm wzbj">编辑</button>
+                                <button class="btn btn-danger btnBj btnDel input-sm">删除</button>
+                                <button class="btn btn-success btnBj btnFabu input-sm">发布</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--分页-->
+                <div class="text-center">
+                    <div class="bs-example" data-example-id="disabled-active-pagination">
+                        <nav aria-label="fenye">
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#" aria-label="Previous"><span
+                                        aria-hidden="true">&laquo;</span></a></li>
+                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 底部页脚部分 --> 
+<div class="footer">
+    <p class="text-center">
+        2018 &copy; Dream_Blog.
+    </p>
+</div>
+</body>
+<script src="/dream_blog/js/jquery.js"></script>
+<script src="/dream_blog/bs/js/bootstrap.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            url:url,
+            dateType:'JSON',
+            success:function (lb) {
+                
+            },
+            error:function () {
+                
+            }
+        })
+
+        var trSize = $("tbody tr").length;
+        if (trSize >= 7) {
+            $(".bs-example").show();
+        } else {
+            $(".bs-example").hide();
+        }
+        $('.wzbj').click(function(){
+            window.location.href='editor.html';
+        })
+    });
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/dream_blog/bs/css/bootstrap.css">
+    <link rel="stylesheet" href="/dream_blog/css/common.css">
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">找回密码</h2>
+    <div class="row maxWidth">
+        <div class="col-sm-6 col-xs-6 on">第一步：验证</div>
+        <div class="col-sm-6 col-xs-6">第二步：设置密码</div>
+    </div>
+    <form class="form-horizontal" id="forgetOne">
+        <div class="form-group">
+            <label for="forgetTel" class="sr-only">手机号码：</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="forgetTel" placeholder="手机号码" maxlength="11"
+                       describedby="forTel">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="forTel" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fotgetCode" class="sr-only">验证码：</label>
+            <div class="col-sm-9 col-xs-8">
+                <input type="text" class="form-control" id="fotgetCode" placeholder="请输入验证码" maxlength="6"
+                       describedby="forcode">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="forcode" class="sr-only">(error)</span>
+            </div>
+            <div class="col-sm-3 col-xs-4 ">
+                <input type="button" class="Btncode" onclick="forSend()" disabled="disabled" value="获取验证码">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <a href="javascript:void(0);" onclick="forget()" class="btn btn-primary btn-block">下一步</a>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal" id="forgetTwo">
+        <div class="form-group">
+            <label for="forget-pwd" class="sr-only">新密码：</label>
+            <div class="col-sm-12">
+                <input type="password" class="form-control" id="forget-pwd" placeholder="新密码" maxlength="50" describedby="pwd-error" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="pwd-error" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="forget-repwd" class="sr-only">确认新密码：</label>
+            <div class="col-sm-12">
+                <input type="password" class="form-control" id="forget-repwd" placeholder="确认新密码" maxlength="18" describedby="pwd-error" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="repwd-error" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <a href="javascript:void(0);" onclick="ok()" class="btn btn-primary btn-block">提交</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script src="/dream_blog/js/jquery.js"></script>
+<script src="/dream_blog/bs/js/bootstrap.min.js"></script>
+<script src="/dream_blog/js/forgetPwd.js"></script>
+</html>

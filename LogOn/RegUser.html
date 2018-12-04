@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册用户</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/dream_blog/bs/css/bootstrap.css">
+    <link rel="stylesheet" href="/dream_blog/css/common.css">
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal">
+        <h2 class="form-signin-heading">用户注册</h2>
+        <div class="form-group">
+            <label for="Reguser-name" class="sr-only">用户名：</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="Reguser-name" placeholder="用户名" maxlength="11" value=""
+                       describedby="name-error">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="name-error" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Reguser-pwd" class="sr-only">密码：</label>
+            <div class="col-sm-12">
+                <input type="password" class="form-control" id="Reguser-pwd" placeholder="密码" maxlength="50"
+                       describedby="pwd-error" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="pwd-error" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Reguser-repwd" class="sr-only">确认密码：</label>
+            <div class="col-sm-12">
+                <input type="password" class="form-control" id="Reguser-repwd" placeholder="确认密码" maxlength="18"
+                       describedby="pwd-error" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="repwd-error" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtTel" class="sr-only">手机号码：</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="txtTel" placeholder="手机号码" maxlength="11"
+                       describedby="txetTel">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="txetTel" class="sr-only">(error)</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtCode" class="sr-only">验证码：</label>
+            <div class="col-sm-9 col-xs-8">
+                <input type="text" class="form-control" id="txtCode" placeholder="请输入验证码" maxlength="6"
+                       describedby="code">
+                <span class="form-control-feedback" aria-hidden="true"></span>
+                <span id="code" class="sr-only">(error)</span>
+            </div>
+            <div class="col-sm-3 col-xs-4 ">
+                <input type="button" class="Btncode" onclick="sendMessage()" disabled="disabled" value="获取验证码">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <a href="javascript:void(0);" onclick="Reguser()" class="btn btn-primary btn-block">注册</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script src="/dream_blog/js/jquery.js"></script>
+<script src="/dream_blog/bs/js/bootstrap.min.js"></script>
+<script src="/dream_blog/js/RegUser.js"></script>
+</html>
